@@ -12,4 +12,34 @@ gems:
 markdown: kramdown
 baseurl: /blog
 
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
+theme_settings:
+  # Meta
+  title: Type on Strap # blog's title
+  avatar: assets/img/triangle.svg
+  favicon: assets/favicon.ico
+  gravatar: # Email MD5 hash
+
+# Header and footer text
+header_text: > #two or three lines to describe your site
+   <p>Change header text in <code>_config.yml</code> <br> to update this feature.</p>
+header_text_feature_image: assets/img/pexels/triangular.jpeg
+footer_text: >
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+
+# Colours, typography and padding
+# Open the "_sass > base" folder, and open "_variables.scss"
+google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+# Post navigation
+post_navigation: true
+
+# BUILD SETTINGS
+markdown: kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins: [jekyll-paginate, jekyll-seo-tag]
+#theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
+exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png", "package.json", "node_modules", "gulpfile.js", ".idea/*"]
