@@ -5,6 +5,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "
 markdown: kramdown
 highlights: pygments
 url: "https://air-s.github.io/blog/"
+baseurl: ""
 lsi: false
 safe: true
 auto: false
