@@ -2,8 +2,19 @@
 title: Air Blog
 include: ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
+markdown: kramdown
 highlights: pygments
+lsi: false
+safe: true
+auto: false
 timezone: Asia/Shanghai
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
 author: Air
 description: ''
 permalink: '/:year/:month/:day/:title/'
@@ -13,11 +24,4 @@ twitter_username: QIUPENMING
 github_username: Air-s
 gems:
   - jekyll-paginate
-markdown: kramdown
-kramdown:
-  auto_ids: true,
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
 baseurl: /blog
