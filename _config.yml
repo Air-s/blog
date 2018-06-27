@@ -4,6 +4,7 @@ include: ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
 markdown: kramdown
 highlights: pygments
+url: "https://air-s.github.io/blog/"
 lsi: false
 safe: true
 auto: false
