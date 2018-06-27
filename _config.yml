@@ -1,15 +1,18 @@
-# Created by Jekyll Writer
-title: Air Blog
+permalink: /blog/:year/:month/:title.html 
 include: ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "CNAME", "Gemfile", "Gemfile.lock"]
 markdown: kramdown
 highlights: pygments
-url: "https://air-s.github.io/blog/"
-baseurl: ""
+url: 
+#cdn_url: 7u2t01.com1.z0.glb.clouddn.com
 lsi: false
 safe: true
-auto: false
 timezone: Asia/Shanghai
+auto: false 
+
+paginate: 8
+paginate_path: "page:num"
+
 kramdown:
   auto_ids: true,
   footnote_nr: 1
@@ -17,13 +20,17 @@ kramdown:
   toc_levels: 1..6
   use_coderay: false
 
-author: Air
-description: ''
-permalink: '/:year/:month/:day/:title/'
-paginate: 6
-paginate_path: '/page/:num/'
-twitter_username: QIUPENMING
-github_username: Air-s
-gems:
-  - jekyll-paginate
-baseurl: /blog
+JB :
+  IMAGE_PATH : https://air-s.github.io/blog/images
+
+# presonal config
+title: Lippi-浮生志
+description: Draw my life with code
+author: Lippi.OuYang
+email: ouyanglip@gmail.com
+github: LippiOuYang
+
+config:
+  js_dir:
+  img_dir:
+  css_dir:
