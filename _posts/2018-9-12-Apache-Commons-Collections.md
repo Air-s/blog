@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Apache Commons Collections
-tags: [Apache Commons, Utils]
+tags: [Apache Commons, Collections, Utils]
 excerpt_separator: <!--more-->
 ---
 Apache Commons Collections 工具包总览
@@ -19,5 +19,5 @@ Apache Commons Collections 工具包总览
 > This package contains implementations of the ... interfaces
 - 提供一些功能类
 > This package provides classes ...
-- 解释一波 `split map` 概念
+- 解释一波 split map 概念
 > The "split map" concept is that of an object that implements the Put and Get interfaces, with differing generic types.
