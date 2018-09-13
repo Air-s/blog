@@ -8,7 +8,7 @@ Apache Commons Collections——Bag
 <!--more-->
 ## 概览
 ![Collection Bag API](https://i.imgur.com/nLMJGVZ.jpg)
-CLass Summary 中列举的类很多，当然是不能一个个看的。注意到上方的提示：This package contains implementations of the Bag and SortedBag interfaces. See: Description。大意是此包是 Bag 和 SortedBag 接口的实现。然后查看 Description 内容。
+CLass Summary 中列举的类很多，当然是不能一个个去看的。注意到上方的提示：This package contains implementations of the Bag and SortedBag interfaces. See: Description。大意是此包是 Bag 和 SortedBag 接口的实现。然后查看 Description 内容。
 > JavaDoc：[apache.commons.collections4.bag](https://commons.apache.org/proper/commons-collections/javadocs/api-4.2/index.html)
 
 ![Collection Bag API Description](https://i.imgur.com/F1U005B.jpg)
@@ -18,3 +18,23 @@ CLass Summary 中列举的类很多，当然是不能一个个看的。注意到
 - 五种装饰器：Synchronized、Unmodifiable、Predicated、Transformed、Collection
 
 了解这些信息后，结合 Class Summary 中的 Description 大体就可以明白这些类的作用。除去基本的 HashBag 和 TreeBag，大部分类都是装饰器类。例如 PredicateBag 可以对 Bag 进行功能装饰，SynchronizedSortedBag 针对 SortedBag 进行功能装饰。这些装饰器的方法都是静态的。 
+
+## HashBag、TreeBag
+首先从 Google 中获取一波资料，之后需要继续深入阅读文档
+
+### 基本概念
+- Bag：继承自 Collection 接口，定义了一个集合，该集合会记录对象在集合中出现的次数。假设你有一个包，包含 {a, a, b, c}。调用getCount(a) 方法将返回2，调用 uniqueset() 方法将返回 {a, b, c}。
+> [commons-collections使用介绍之Bag](https://blog.csdn.net/jianggujin/article/details/51069087)
+- TreeBag：它会跟踪对象添加到对象的副本数量，并按计数的升序对其进行排序。要获得最高计数项，只需调用last()方法即可。有一点需要注意的是，commons集合的东西还没有更新到使用泛型，所以你可能会得到大量的编译器警告使用它。
+> [像HashMap这样的集合，但排序如何处理？](https://oomake.com/question/365265)
+- Bag 接口中两个最重要的方法是：getCount(Object o)，用来返回Bag里面特定对象的出现次数；uniqueSet()，返回所有唯一元素。因此常见的一种用法是统计单词频率
+
+Word          | Frequency
+------------- | -------------
+a  			  |   1
+and  		  |   5
+appearances   |   1
+as            |   1
+> [【CODE Q&A Sovled】您将使用哪种数据结构：TreeMap或HashMap？（JAVA）](https://code.i-harness.com/zh-CN/q/49d23)
+
+### 初步使用
