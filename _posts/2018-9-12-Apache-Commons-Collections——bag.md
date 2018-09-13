@@ -8,8 +8,8 @@ Apache Commons Collections——Bag
 <!--more-->
 ## 概览
 ![Collection Bag API](https://i.imgur.com/nLMJGVZ.jpg)
-CLass Summary 中列举的类很多，当然是不能一个个去看的。注意到上方的提示：This package contains implementations of the Bag and SortedBag interfaces. See: Description。大意是此包是 Bag 和 SortedBag 接口的实现。然后查看 Description 内容。
 > JavaDoc：[apache.commons.collections4.bag](https://commons.apache.org/proper/commons-collections/javadocs/api-4.2/index.html)
+CLass Summary 中列举的类很多，当然是不能一个个去看的。注意到上方的提示：This package contains implementations of the Bag and SortedBag interfaces. See: Description。大意是此包是 Bag 和 SortedBag 接口的实现。然后查看 Description 内容。
 
 ![Collection Bag API Description](https://i.imgur.com/F1U005B.jpg)
 上述Description大意是：
@@ -35,6 +35,27 @@ a  			  |   1
 and  		  |   5
 appearances   |   1
 as            |   1
+
 > [【CODE Q&A Sovled】您将使用哪种数据结构：TreeMap或HashMap？（JAVA）](https://code.i-harness.com/zh-CN/q/49d23)
 
+### 关于文档
+从文档中能得到很多信息，从头开始看
+- 继承关系
+	- Type Parameters：泛型代表意义
+	- All Implemented Interfaces:继承接口
+- 文字说明
+- Nested Class Summary：内部类
+	- AbstractMapBag.MutableInteger 静态类，查看源码解释作用为存储数据
+- Constructor Summary：构造方法一览
+	- 对于 TreeBag 可以传入一个 Comparator 实现自定义比较
+- Method Summary
+	- 这个就比较重要
+	- 首先是这个类自己的方法
+	- 其次是继承下来的方法（Methods inherited from class ...）
+- Constructor Detail/Method Detail：没啥特别重要的说明
+
 ### 初步使用
+- Bag 接口 API 方法摘要、HashBag/TreeBag 简单 Demo
+> [commons-collections 使用介绍之 Bag](https://blog.csdn.net/jianggujin/article/details/51069087)
+- Github上的一个Demo项目，涉及到多个集合使用示例
+> [【Github】Vedenin：java_in_examples](https://github.com/Vedenin/java_in_examples/tree/master/collections/src/com/github/vedenin/eng/collections/multiset)
