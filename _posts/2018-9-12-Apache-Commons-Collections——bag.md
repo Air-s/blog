@@ -18,7 +18,7 @@ CLass Summary 中列举的类很多，当然是不能一个个去看的。注意
 - 两种实现类：hashBag、Treebag
 - 五种装饰器：Synchronized、Unmodifiable、Predicated、Transformed、Collection
 
-了解这些信息后，结合 Class Summary 中的 Description 大体就可以明白这些类的作用。除去基本的 HashBag 和 TreeBag，大部分类都是装饰器类。例如 PredicateBag 可以对 Bag 进行功能装饰，SynchronizedSortedBag 针对 SortedBag 进行功能装饰。这些装饰器的方法都是静态的。 
+> 了解这些信息后，结合 Class Summary 中的 Description 大体就可以明白这些类的作用。除去基本的 HashBag 和 TreeBag，大部分类都是装饰器类。例如 PredicateBag 可以对 Bag 进行功能装饰，SynchronizedSortedBag 针对 SortedBag 进行功能装饰。这些装饰器的方法都是静态的。 
 
 ## HashBag、TreeBag
 首先从 Google 中获取一波资料，之后需要继续深入阅读文档
@@ -65,12 +65,12 @@ as            |   1
 
 ![](https://i.imgur.com/bQzYV9S.jpg)
 ![](https://i.imgur.com/D2vyYjT.jpg)
-> JavaDoc：[Class PredicatedBag<E>](https://commons.apache.org/proper/commons-collections/javadocs/api-4.2/org/apache/commons/collections4/bag/PredicatedBag.html)
+> JavaDoc：[Class PredicatedBag](https://commons.apache.org/proper/commons-collections/javadocs/api-4.2/org/apache/commons/collections4/bag/PredicatedBag.html)
 
 以 PredicatedBag 为例，从文字简述中可以看到静态方法需要两个参数，其中第二个参数为 Predicate 类，查看其定义
 
 ![](https://i.imgur.com/zjziKKH.jpg)
-> JavaDoc：[Interface Predicate<T>](https://commons.apache.org/proper/commons-collections/javadocs/api-4.2/org/apache/commons/collections4/Predicate.html)
+> JavaDoc：[Interface Predicate](https://commons.apache.org/proper/commons-collections/javadocs/api-4.2/org/apache/commons/collections4/Predicate.html)
 
 重要的一句话：Standard implementations of common predicates are provided by PredicateUtils.
 
