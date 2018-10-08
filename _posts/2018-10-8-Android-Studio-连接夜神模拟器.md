@@ -19,3 +19,7 @@ excerpt_separator: <!--more-->
 
 ### 连接模拟器
 - 命令行执行命令：nox_adb connect 127.0.0.1:查找到的端口，例如我这里是 nox_adb connect 127.0.0.1:62025
+
+### 参考
+- [Android Studio：如何使用Android Studio与夜神模拟器开发调试](https://blog.csdn.net/jssongwei/article/details/50771441)
+- [解决夜神模拟器无法联机调试 adb server version (**） doesn't match this client (**); killing...](https://blog.csdn.net/admans/article/details/81128168)
