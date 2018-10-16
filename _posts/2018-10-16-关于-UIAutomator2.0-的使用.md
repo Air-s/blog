@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Android Studio 连接华为手机
-tags: [Android Studio, 华为手机]
+title: 关于 UIAutomator2.0 的使用
+tags: [UIAutomator2.0]
 excerpt_separator: <!--more-->
 ---
 每天完成五条发现者的任务是在太烦，所以用 UI 自动测试框架完成
