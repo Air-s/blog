@@ -1,3 +1,10 @@
+# 看似平淡的日常，实际上是最珍贵的时光
+blog 使用 Type on Strap 模板
+其他 Jekyll 模板搜索 Jekyll Themes 关键词即可
+
+# Blog 搭建
+网络上都是通过 master 分支搭建的，如果想搭建多个 blog 或者建立项目主页需要建立gh-pages，之后在 setting 中找到 GitHub Pages 中设置 source 为 gh-pages，之后切换分支到 gh-pages 将 Jekyll 模板上传至此分支即可。
+
 # Type on Strap 
 
 [![Build Status](https://travis-ci.org/Sylhare/Type-on-Strap.svg?branch=master)](https://travis-ci.org/Sylhare/Type-on-Strap) 
