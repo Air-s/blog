@@ -1113,8 +1113,8 @@
       }
     },
     "cryptiles": {
-      "version": "4.1.2",
-      "resolved": "https://registry.npmjs.org/cryptiles/-/cryptiles-4.1.2.tgz",
+      "version": "2.0.5",
+      "resolved": "https://registry.npmjs.org/cryptiles/-/cryptiles-2.0.5.tgz",
       "integrity": "sha1-O9/s3GCBR8HGcgL6KR59ylnqo7g=",
       "dev": true,
       "optional": true,
@@ -3095,9 +3095,9 @@
           "dev": true
         },
         "minimatch": {
-          "version": "3.0.4",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz",
-          "integrity": "sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==",
+          "version": "0.2.14",
+          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-0.2.14.tgz",
+          "integrity": "sha1-x054BXT2PG+aCQ6Q775u9TpqdWo=",
           "dev": true,
           "requires": {
             "lru-cache": "2.7.3",
@@ -3912,7 +3912,7 @@
       "optional": true,
       "requires": {
         "boom": "2.10.1",
-        "cryptiles": "4.1.2",
+        "cryptiles": "2.0.5",
         "hoek": "4.6.1",
         "sntp": "1.0.9"
       }
