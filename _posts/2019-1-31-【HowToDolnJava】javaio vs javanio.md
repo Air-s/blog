@@ -1,10 +1,10 @@
 ---
 layout: post
-title:【HowToDolnJava】java.io vs java.nio
-tags: [教程翻译, JavaIO]
+title: 每周阅读——基础知识
+tags: [每周阅读]
 excerpt_separator: <!--more-->
 ---
-[HowToDolnJava](https://howtodoinjava.com/java-io-tutorial/) 站点的 I/O 教程，Java I/O 基础知识[第二篇（原文链接）](https://howtodoinjava.com/java/io/difference-between-standard-io-and-nio/)
+主要内容：IO（Buffer/PageCache、Kafka/IO/SSD原理）、线程与进程
 <!--more-->
 
 ## Java.IO vs. Java.NIO
