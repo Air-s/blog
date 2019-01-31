@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 【HowToDolnJava】java.io vs java.nio
-tags: [每周阅读]
+tags: [教程翻译, JavaIO]
 excerpt_separator: <!--more-->
 ---
 主要内容：IO（Buffer/PageCache、Kafka/IO/SSD原理）、线程与进程
