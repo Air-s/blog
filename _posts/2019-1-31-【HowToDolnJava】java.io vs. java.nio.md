@@ -1,6 +1,6 @@
 ---
 layout: post
-title:【HowToDolnJava】java.io vs java.nio
+title:java.io vs java.nio
 tags: [教程翻译, JavaIO]
 excerpt_separator: <!--more-->
 ---
