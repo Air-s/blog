@@ -41,7 +41,7 @@ yum install -y stress-ng
 
 使用 uptime 命令（或者 watch -d uptime：2s刷新并高亮显示变化的区域）
 
-```mysql
+```java
 [root@localhost ~]# uptime
 当前时间       系统以运行时间   正在登录用户数  1分钟、5分钟、15分钟平均负载
 13:15:29 up   1:39,         3 users,      load average: 0.00, 0.01, 0.05
@@ -49,7 +49,7 @@ yum install -y stress-ng
 
 >  使用 man uptime 可以查看命令的帮助手册
 
-##### 概念解释
+#### 概念解释
 
 1. 平均负载：单位时间内系统处于**可运行状态**和**不可中断状态**的平均**进程数**，即平均活跃进程数。
 
@@ -65,7 +65,7 @@ yum install -y stress-ng
 
      > **因此平均负载高可能是CPU繁忙、线程超过逻辑核心数、I/O繁忙等多方面原因造成**
 
-##### 平均负载分析
+#### 平均负载分析
 
 uptime 给出 1分钟、5分钟、15分钟平均负载，通过三个数值可以大致分析出系统负载情况（实际上如果有实时监控曲线图更好）
 
@@ -75,7 +75,7 @@ uptime 给出 1分钟、5分钟、15分钟平均负载，通过三个数值可�
 
 一般而言，如果负载超过CPU逻辑数量70%需要注意系统负载问题，当然这也只是经验值。
 
-##### 平均负载、CPU、I/O的关系
+#### 平均负载、CPU、I/O的关系
 
 - CPU密集型进程：会导致平均负载增高（使用 `stress-ng --cpu 2 --timeout 60` 模拟）
 
@@ -126,7 +126,7 @@ uptime 给出 1分钟、5分钟、15分钟平均负载，通过三个数值可�
 
   - 使用 stress-ng -c 14 --timeout 70 命令模拟14进程
 
-  ```
+  ```javascript
   [root@localhost ~]# pidstat -u 5 1
   Linux 3.10.0-693.el7.x86_64 (localhost.localdomain)  _x86_64_(8 CPU)
   UID     PID    %usr %system  %guest   %wait    %CPU   CPU  Command
