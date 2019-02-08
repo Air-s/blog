@@ -5,7 +5,7 @@ tags: [性能分析]
 excerpt_separator: <!--more-->
 ---
 
-简要结论：uptime 命令反映出的平均负载高可能是CPU繁忙、CPU竞争（线程超过逻辑核心数造成竞争/阻塞...）、I/O繁忙等多方面原因造成
+简要结论：pidstat 命令以进程角度分析，mpstat 命令以 CPU 角度分析。uptime 命令反映出的平均负载高可能是CPU繁忙、CPU竞争（线程超过逻辑核心数造成竞争/阻塞...）、I/O繁忙等多方面原因造成
 
 <!--more-->
 
@@ -107,7 +107,7 @@ uptime 给出 1分钟、5分钟、15分钟平均负载，通过三个数值可�
   
   ```
 
-  ```java
+  ```javascript
   [root@localhost ~]# pidstat -u 5 1
   Linux 3.10.0-693.el7.x86_64 (localhost.localdomain)  _x86_64_ (8 CPU)
   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
