@@ -53,7 +53,7 @@ excerpt_separator: <!--more-->
 
 7. [`int[]`如何轻松转换为`Integer[]`](https://code.i-harness.com/zh-CN/q/d6fc5)
 
-8. [在Java中如何将List <Integer>转换为int []？](https://code.i-harness.com/zh-CN/q/ea7af)
+8. [在Java中如何将List <Integer>转换为`int[]`？](https://code.i-harness.com/zh-CN/q/ea7af)
 
 9. [是否有一个好的可用（标准Java）数据结构来表示Java中的树？](https://code.i-harness.com/zh-CN/q/35bf96)
 
@@ -63,10 +63,30 @@ excerpt_separator: <!--more-->
 
 12. [如何检测链表中的循环？](https://code.i-harness.com/zh-CN/q/28a2cb)
 
-13. [重复String的简单方法](https://code.i-harness.com/zh-CN/q/12d8eb)
+13. [检测重复String的简单方法](https://code.i-harness.com/zh-CN/q/12d8eb)
 
 14. [Java 8中的map和flatMap方法有什么区别？](https://code.i-harness.com/zh-CN/q/1972c92)
 
     > [flatmap将多个Stream连接成一个Stream](https://blog.csdn.net/andyzhaojianhui/article/details/79047825)，换言之它可以接收类似于list<list<E>>之类的集合，每个元素都可以迭代。之后对每一个元素进行迭代，每一次迭代进行一次方法
 
-15. 
+15. [为什么在尝试从列表中删除元素时会遇到UnsupportedOperationException？](https://code.i-harness.com/zh-CN/q/2d40f3)
+
+    > ```java
+    > Arrays.asList()返回的列表是不可变的。
+    > 使用 List<String> list = new ArrayList(Arrays.asList(split))
+    > ```
+
+
+16. [如何在Java中填充字符串](https://code.i-harness.com/zh-CN/q/5ed6d)
+
+    > 使用 String.format 方法
+
+17. [如何在Java中反转字符串](https://code.i-harness.com/zh-CN/q/737fb7)
+
+    > ```java
+    > new StringBuilder(hi).reverse().toString()
+    > ```
+
+18. [java如何初始化二维数组](https://code.i-harness.com/zh-CN/q/baa31d)
+
+19. 
