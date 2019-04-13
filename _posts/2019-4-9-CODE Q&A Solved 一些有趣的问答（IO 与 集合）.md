@@ -45,15 +45,15 @@ excerpt_separator: <!--more-->
 
 3. [【相互转换】java数组转set set转string - 如何将数组转换为Java中的Set](https://code.i-harness.com/zh-CN/q/2ec267)
 
-4. [在Java中将`List`转换为`Set`的最简单方法是什么？](https://code.i-harness.com/zh-CN/q/15d164)
+4. [在Java中将 List 转换为 Set 的最简单方法是什么？](https://code.i-harness.com/zh-CN/q/15d164)
 
 5. [如何在迭代集合时安全地从集合中移除元素](https://code.i-harness.com/zh-CN/q/12422a)
 
 6. [所有迭代列表的方式以及每种方式的优缺点](https://code.i-harness.com/zh-CN/q/118ea33)
 
-7. [`int[]`如何轻松转换为`Integer[]`](https://code.i-harness.com/zh-CN/q/d6fc5)
+7. [**int[]**如何轻松转换为**Integer[]**](https://code.i-harness.com/zh-CN/q/d6fc5)
 
-8. [在Java中如何将List <Integer>转换为`int[]`？](https://code.i-harness.com/zh-CN/q/ea7af)
+8. [在Java中如何将**List <Integer>**转换为**int[]**？](https://code.i-harness.com/zh-CN/q/ea7af)
 
 9. [是否有一个好的可用（标准Java）数据结构来表示Java中的树？](https://code.i-harness.com/zh-CN/q/35bf96)
 
