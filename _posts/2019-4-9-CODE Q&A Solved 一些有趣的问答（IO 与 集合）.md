@@ -23,19 +23,21 @@ excerpt_separator: <!--more-->
 
 4. [java inputstream读取字符串 inputstream转为string - 如何在Java中将字符串转换为InputStream？](https://code.i-harness.com/zh-CN/q/bef62)
 
-5. [如何将 java.io.File 转换为 byte[] ？](https://code.i-harness.com/zh-CN/q/d1b64)
+5. [如何将 **java.io.File** 转换为 **byte[]** ？](https://code.i-harness.com/zh-CN/q/d1b64)
 
 6. [java遍历目录下的所有文件](https://code.i-harness.com/zh-CN/q/1c25d0)
 
-7. [将输出从java.io.OutputStream传递到Java中的String的最佳方式是什么？](https://code.i-harness.com/zh-CN/q/34f3e)
+7. [java删除指定目录中所有文件](https://code.i-harness.com/zh-CN/q/be4ff)
 
-8. [使用scanner java的scanner类与换行符问题](https://code.i-harness.com/zh-CN/q/c7ebdd)
+8. [将输出从java.io.OutputStream传递到Java中的String的最佳方式是什么？](https://code.i-harness.com/zh-CN/q/34f3e)
 
-9. [如何在Java中获得依赖于平台的换行符？](https://code.i-harness.com/zh-CN/q/32c4b)
+9. [使用scanner java的scanner类与换行符问题](https://code.i-harness.com/zh-CN/q/c7ebdd)
 
-10. [在Java中安全地将long转换为int](https://code.i-harness.com/zh-CN/q/18462f)
+10. [如何在Java中获得依赖于平台的换行符？](https://code.i-harness.com/zh-CN/q/32c4b)
 
-11. 
+11. [在Java中安全地将**long**转换为**int**](https://code.i-harness.com/zh-CN/q/18462f)
+
+12. 
 
 ### 集合
 
@@ -53,7 +55,7 @@ excerpt_separator: <!--more-->
 
 7. [**int[]**如何轻松转换为**Integer[]**](https://code.i-harness.com/zh-CN/q/d6fc5)
 
-8. [在Java中如何将**List <Integer>**转换为**int[]**？](https://code.i-harness.com/zh-CN/q/ea7af)
+8. [在Java中如何将**List <**Integer**>**转换为**int[]**？](https://code.i-harness.com/zh-CN/q/ea7af)
 
 9. [是否有一个好的可用（标准Java）数据结构来表示Java中的树？](https://code.i-harness.com/zh-CN/q/35bf96)
 
@@ -71,8 +73,8 @@ excerpt_separator: <!--more-->
 
 15. [为什么在尝试从列表中删除元素时会遇到UnsupportedOperationException？](https://code.i-harness.com/zh-CN/q/2d40f3)
 
+	> Arrays.asList()返回的列表是不可变的。
     > ```java
-    > Arrays.asList()返回的列表是不可变的。
     > 使用 List<String> list = new ArrayList(Arrays.asList(split))
     > ```
 
@@ -89,4 +91,10 @@ excerpt_separator: <!--more-->
 
 18. [java如何初始化二维数组](https://code.i-harness.com/zh-CN/q/baa31d)
 
-19. 
+19. [在java中如何比较日期?](https://code.i-harness.com/zh-CN/q/278ef5)
+
+    > 使用 **Date.before()**，**Date.after()** 和 **Date.equals()**
+    > ```java
+    > if(todayDate.after(historyDate) && todayDate.before(futureDate)){...}
+    > ```
+
