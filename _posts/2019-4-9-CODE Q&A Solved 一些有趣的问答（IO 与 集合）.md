@@ -98,5 +98,5 @@ excerpt_separator: <!--more-->
     > if(todayDate.after(historyDate) && todayDate.before(futureDate)){...}
     > ```
 
-<video controls="" autoplay="" name="media"><source src="http://dl.stream.qqmusic.qq.com/M500000pNA1e4c8zx1.mp3?vkey=CC5F80ADFF396464208628B20D6E9719662EC8167EB0AC25943BB5A9A9C76F1F1E355F1A8F9399CE26FFA87C208A8BF12E00E573864F0292&amp;guid=5150825362&amp;fromtag=1" type="audio/mpeg"></video>
+<video controls="" autoplay="" name="media" style="text-align: center"><source src="http://dl.stream.qqmusic.qq.com/M500000pNA1e4c8zx1.mp3?vkey=CC5F80ADFF396464208628B20D6E9719662EC8167EB0AC25943BB5A9A9C76F1F1E355F1A8F9399CE26FFA87C208A8BF12E00E573864F0292&amp;guid=5150825362&amp;fromtag=1" type="audio/mpeg"></video>
 
