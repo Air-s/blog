@@ -79,7 +79,7 @@ excerpt_separator: <!--more-->
   > entities.addAll(s);
   > ```
 
-11. [**List<String>** 合并为一个 **String** ](https://code.i-harness.com/zh-CN/q/1abb24)
+11. [**List<**String**>** 合并为一个 **String** ](https://code.i-harness.com/zh-CN/q/1abb24)
 
   > ```java
   > // Bill and Bob and Steve
