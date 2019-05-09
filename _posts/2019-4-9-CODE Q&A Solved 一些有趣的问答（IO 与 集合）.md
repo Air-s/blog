@@ -47,15 +47,15 @@ excerpt_separator: <!--more-->
 4. [在Java中将 List 转换为 Set 的最简单方法是什么？](https://code.i-harness.com/zh-CN/q/15d164)
 5. [如何在迭代集合时安全地从集合中移除元素](https://code.i-harness.com/zh-CN/q/12422a)
 
-  > 
-  > ```java
-  > for(Iterator<String> i = names.iterator(); i.hasNext();) {
-  >        String name = i.next(); // must be called before you can call i.remove()
-  >        //Do Something
-  >        i.remove();
-  > }
-  > ```
-  > Tips：另外一种删除重复项的方法是将列表转储到 LinkedHashSet（如果需要，然后返回到列表中）。 这可以在删除重复项时保留插入顺序。
+      > 
+      > ```java
+      > for(Iterator<String> i = names.iterator(); i.hasNext();) {
+      >        String name = i.next(); // must be called before you can call i.remove()
+      >        //Do Something
+      >        i.remove();
+      > }
+      > ```
+      > Tips：另外一种删除重复项的方法是将列表转储到 LinkedHashSet（如果需要，然后返回到列表中）。 这可以在删除重复项时保留插入顺序。
 
 6. [所有迭代列表的方式以及每种方式的优缺点](https://code.i-harness.com/zh-CN/q/118ea33)
 
@@ -63,50 +63,50 @@ excerpt_separator: <!--more-->
 
 8. [在Java中如何将**List <**Integer**>**转换为**int[]**？](https://code.i-harness.com/zh-CN/q/ea7af)
 
-  > ```java
-  > public int[] toIntArray(List<Integer> intList){
-  >        return intList.stream().mapToInt(Integer::intValue).toArray();
-  > }
-  > ```
+      > ```java
+      > public int[] toIntArray(List<Integer> intList){
+      >        return intList.stream().mapToInt(Integer::intValue).toArray();
+      > }
+      > ```
 
 9. [是否有一个好的可用（标准Java）数据结构来表示Java中的树？](https://code.i-harness.com/zh-CN/q/35bf96)
 
 10. [ 如何从ArrayList中删除重复的元素？](https://code.i-harness.com/zh-CN/q/31cd0)
-  > ```java
-  > List<Entity> entities = ...;
-  > Set<Entity> s = new LinkedHashSet<Entity>(entities);
-  > entities.clear();
-  > entities.addAll(s);
-  > ```
+      > ```java
+      > List<Entity> entities = ...;
+      > Set<Entity> s = new LinkedHashSet<Entity>(entities);
+      > entities.clear();
+      > entities.addAll(s);
+      > ```
 
 11. [**List<**String**>** 合并为一个 **String** ](https://code.i-harness.com/zh-CN/q/1abb24)
 
-  > ```java
-  > // Bill and Bob and Steve
-  > String.join(" and ", Arrays.asList("Bill", "Bob", "Steve"));
-  > ```
+      > ```java
+      > // Bill and Bob and Steve
+      > String.join(" and ", Arrays.asList("Bill", "Bob", "Steve"));
+      > ```
 
 12. [java逗号分隔字符串转为集合](https://code.i-harness.com/zh-CN/q/724483)
-  > ```java
-  > String commaSeparated = "item1 , item2 , item3";
-  > ArrayList<String> items = 
-  > new  ArrayList<String>(Arrays.asList(commaSeparated.split(",")));
-  > ```
+      > ```java
+      > String commaSeparated = "item1 , item2 , item3";
+      > ArrayList<String> items = 
+      > new  ArrayList<String>(Arrays.asList(commaSeparated.split(",")));
+      > ```
 
 13. [如何检测链表中的循环？](https://code.i-harness.com/zh-CN/q/28a2cb)
 
 14. [统计字符串中某一字符出现的个数](https://code.i-harness.com/zh-CN/q/435e8)
 
-  > ```java
-  > int res = "abdsd3$asda$asasdd$sadas".chars()
-  >     	.reduce(0, (a, c) -> a + (c == '$' ? 1 : 0));
-  > System.out.println(res);
-  > ```
+      > ```java
+      > int res = "abdsd3$asda$asasdd$sadas".chars()
+      >     	.reduce(0, (a, c) -> a + (c == '$' ? 1 : 0));
+      > System.out.println(res);
+      > ```
 
 15. [检测重复String的简单方法](https://code.i-harness.com/zh-CN/q/12d8eb)
 16. [Java 8中的map和flatMap方法有什么区别？](https://code.i-harness.com/zh-CN/q/1972c92)
 
-   > [flatmap将多个Stream连接成一个Stream](https://blog.csdn.net/andyzhaojianhui/article/details/79047825)，换言之它可以接收类似于list<list<E>>之类的集合，每个元素都可以迭代。之后对每一个元素进行迭代，每一次迭代进行一次方法
+       > [flatmap将多个Stream连接成一个Stream](https://blog.csdn.net/andyzhaojianhui/article/details/79047825)，换言之它可以接收类似于list<list<E>>之类的集合，每个元素都可以迭代。之后对每一个元素进行迭代，每一次迭代进行一次方法
 
 17. [为什么在尝试从列表中删除元素时会遇到UnsupportedOperationException？](https://code.i-harness.com/zh-CN/q/2d40f3)
 
