@@ -25,26 +25,34 @@ excerpt_separator: <!--more-->
 
 5. [如何将 **java.io.File** 转换为 **byte[]** ？](https://code.i-harness.com/zh-CN/q/d1b64)
 
-6. [java遍历目录下的所有文件](https://code.i-harness.com/zh-CN/q/1c25d0)
+6. [读取文件中的特定的行？](https://code.i-harness.com/zh-CN/q/234a34)
 
-7. [java删除指定目录中所有文件](https://code.i-harness.com/zh-CN/q/be4ff)
+7. [java遍历目录下的所有文件](https://code.i-harness.com/zh-CN/q/1c25d0)
 
-8. [将输出从java.io.OutputStream传递到Java中的String的最佳方式是什么？](https://code.i-harness.com/zh-CN/q/34f3e)
+8. [java删除指定目录中所有文件](https://code.i-harness.com/zh-CN/q/be4ff)
 
-9. [使用scanner java的scanner类与换行符问题](https://code.i-harness.com/zh-CN/q/c7ebdd)
+9. [将输出从java.io.OutputStream传递到Java中的String的最佳方式是什么？](https://code.i-harness.com/zh-CN/q/34f3e)
 
-10. [如何在Java中获得依赖于平台的换行符？](https://code.i-harness.com/zh-CN/q/32c4b)
+10. [使用scanner java的scanner类与换行符问题](https://code.i-harness.com/zh-CN/q/c7ebdd)
 
-11. [在Java中安全地将**long**转换为**int**](https://code.i-harness.com/zh-CN/q/18462f)
+11. [如何在Java中获得依赖于平台的换行符？](https://code.i-harness.com/zh-CN/q/32c4b)
 
-12. 
+12. [在Java中安全地将**long**转换为**int**](https://code.i-harness.com/zh-CN/q/18462f)
+
+13. [java separator 用法 - File.separator 或 File.pathSeparator](https://code.i-harness.com/zh-CN/q/5b1ffc#header)
+
+14. 
 
 ### 集合
 
 1. [java list教程 list用法 - 如何在Java中创建一个新的List](https://code.i-harness.com/zh-CN/q/d19cc)
+
 2. [list合并 - 我如何在Java中加入两个列表？](https://code.i-harness.com/zh-CN/q/2e477)
+
 3. [【相互转换】java数组转set set转string - 如何将数组转换为Java中的Set](https://code.i-harness.com/zh-CN/q/2ec267)
+
 4. [在Java中将 List 转换为 Set 的最简单方法是什么？](https://code.i-harness.com/zh-CN/q/15d164)
+
 5. [如何在迭代集合时安全地从集合中移除元素](https://code.i-harness.com/zh-CN/q/12422a)
 
       > 
@@ -59,61 +67,70 @@ excerpt_separator: <!--more-->
 
 6. [所有迭代列表的方式以及每种方式的优缺点](https://code.i-harness.com/zh-CN/q/118ea33)
 
-7. [**int[]**如何轻松转换为**Integer[]**](https://code.i-harness.com/zh-CN/q/d6fc5)
+7. [各类循环方式消耗时间对比](https://code.i-harness.com/zh-CN/q/fdd606)
 
-8. [在Java中如何将**List <**Integer**>**转换为**int[]**？](https://code.i-harness.com/zh-CN/q/ea7af)
+      > 在文中对于迭代 **List<**Integer**>** 集合，**List.stream().forEach()** 最具效率。
 
-      > ```java
-      > public int[] toIntArray(List<Integer> intList){
-      >        return intList.stream().mapToInt(Integer::intValue).toArray();
-      > }
-      > ```
+8. [为什么 Java 中没有 SortedList？](https://code.i-harness.com/zh-CN/q/85238b)
 
-9. [是否有一个好的可用（标准Java）数据结构来表示Java中的树？](https://code.i-harness.com/zh-CN/q/35bf96)
+9. [**int[]**如何轻松转换为**Integer[]**](https://code.i-harness.com/zh-CN/q/d6fc5)
 
-10. [ 如何从ArrayList中删除重复的元素？](https://code.i-harness.com/zh-CN/q/31cd0)
-      > ```java
-      > List<Entity> entities = ...;
-      > Set<Entity> s = new LinkedHashSet<Entity>(entities);
-      > entities.clear();
-      > entities.addAll(s);
-      > ```
+10. [如何将 **List<**Type**>** 转换为 **Type[]**](https://code.i-harness.com/zh-CN/q/9211bb)
 
-11. [**List<**String**>** 合并为一个 **String** ](https://code.i-harness.com/zh-CN/q/1abb24)
+11. [在Java中如何将**List <**Integer**>**转换为**int[]**？](https://code.i-harness.com/zh-CN/q/ea7af)
 
-      > ```java
-      > // Bill and Bob and Steve
-      > String.join(" and ", Arrays.asList("Bill", "Bob", "Steve"));
-      > ```
+         > ```java
+         > public int[] toIntArray(List<Integer> intList){
+         >        return intList.stream().mapToInt(Integer::intValue).toArray();
+         > }
+         > ```
 
-12. [java逗号分隔字符串转为集合](https://code.i-harness.com/zh-CN/q/724483)
-      > ```java
-      > String commaSeparated = "item1 , item2 , item3";
-      > ArrayList<String> items = 
-      > new  ArrayList<String>(Arrays.asList(commaSeparated.split(",")));
-      > ```
+12. [是否有一个好的可用（标准Java）数据结构来表示Java中的树？](https://code.i-harness.com/zh-CN/q/35bf96)
 
-13. [如何检测链表中的循环？](https://code.i-harness.com/zh-CN/q/28a2cb)
+13. [ 如何从ArrayList中删除重复的元素？](https://code.i-harness.com/zh-CN/q/31cd0)
+       > ```java
+       > Set<Entity> s = new LinkedHashSet<Entity>(entities); // List<Entity> entities
+       > entities.clear();
+       > entities.addAll(s);
+       > ```
 
-14. [统计字符串中某一字符出现的个数](https://code.i-harness.com/zh-CN/q/435e8)
+14. [**List<**String**>** 合并为一个 **String** ](https://code.i-harness.com/zh-CN/q/1abb24)
 
-      > ```java
-      > int res = "abdsd3$asda$asasdd$sadas".chars()
-      >     	.reduce(0, (a, c) -> a + (c == '$' ? 1 : 0));
-      > System.out.println(res);
-      > ```
+       > ```java
+       > // Bill and Bob and Steve
+       > String.join(" and ", Arrays.asList("Bill", "Bob", "Steve"));
+       > ```
 
-15. [检测重复String的简单方法](https://code.i-harness.com/zh-CN/q/12d8eb)
-16. [Java 8中的map和flatMap方法有什么区别？](https://code.i-harness.com/zh-CN/q/1972c92)
+15. [将 ArrayList 中内容合并为字符串](https://code.i-harness.com/zh-CN/q/92479)
+
+16. [逗号分隔字符串存储至ArrayList集合中](https://code.i-harness.com/zh-CN/q/724483)
+
+       > ```java
+       > String commaSeparated = "item1 , item2 , item3";
+       > ArrayList<String> items = new ArrayList<String>(Arrays.asList(commaSeparated.split(",")));
+       > ```
+
+17. [如何检测链表中的循环？](https://code.i-harness.com/zh-CN/q/28a2cb)
+
+18. [统计字符串中某一字符出现的个数](https://code.i-harness.com/zh-CN/q/435e8)
+
+       > ```java
+       > int res = "abd3$asda$asad$sas".chars().reduce(0, (a, c) -> a + (c == '$' ? 1 : 0));
+       >    System.out.println(res);
+       > ```
+
+19. [检测重复String的简单方法](https://code.i-harness.com/zh-CN/q/12d8eb)
+
+20. [Java 8中的map和flatMap方法有什么区别？](https://code.i-harness.com/zh-CN/q/1972c92)
 
        > [flatmap将多个Stream连接成一个Stream](https://blog.csdn.net/andyzhaojianhui/article/details/79047825)，换言之它可以接收类似于list<list<E>>之类的集合，每个元素都可以迭代。之后对每一个元素进行迭代，每一次迭代进行一次方法
 
-17. [为什么在尝试从列表中删除元素时会遇到UnsupportedOperationException？](https://code.i-harness.com/zh-CN/q/2d40f3)
+21. [为什么在尝试从列表中删除元素时会遇到UnsupportedOperationException？](https://code.i-harness.com/zh-CN/q/2d40f3)
 
-    > Arrays.asList()返回的列表是不可变的。
-    > ```java
-    > 使用 List<String> list = new ArrayList(Arrays.asList(split))
-    > ```
+       > Arrays.asList()返回的列表是不可变的。
+       > ```java
+       > 使用 List<String> list = new ArrayList(Arrays.asList(split))
+       > ```
 
 
 18. [如何在Java中填充字符串](https://code.i-harness.com/zh-CN/q/5ed6d)
@@ -135,11 +152,13 @@ excerpt_separator: <!--more-->
     > if(todayDate.after(historyDate) && todayDate.before(futureDate)){...}
     > ```
     
-22. []()
+22. [如何在 HashMap 中保留插入顺序？](https://code.i-harness.com/zh-CN/q/a36cb1)
+
+    > 建议并使用 LinkedHashMap 或其他有序集合（它会按照插入顺序迭代元素）。 [此链接可以帮助您找到最适合使用的集合](http://www.javapractices.com/topic/TopicAction.do?Id=65)
+
+23. 
 
 
 
-
-
-<video controls="" autoplay="" name="media" style="clear:both;display:block;margin:auto"><source src="http://dl.stream.qqmusic.qq.com/M500000pNA1e4c8zx1.mp3?vkey=CC5F80ADFF396464208628B20D6E9719662EC8167EB0AC25943BB5A9A9C76F1F1E355F1A8F9399CE26FFA87C208A8BF12E00E573864F0292&amp;guid=5150825362&amp;fromtag=1" type="audio/mpeg"></video>
+<video controls="" autoplay="" name="media" style="clear:both;display:block;margin:auto"><source src="http://dl.stream.qqmusic.qq.com/M500000pNA1e4c8zx1.1mp31?vkey=CC5F80ADFF396464208628B20D6E9719662EC8167EB0AC25943BB5A9A9C76F1F1E355F1A8F9399CE26FFA87C208A8BF12E00E573864F0292&amp;guid=5150825362&amp;fromtag=1" type="audio/mpeg"></video>
 
