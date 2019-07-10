@@ -98,49 +98,49 @@ excerpt_separator: <!--more-->
 14. [是否有一个好的可用（标准Java）数据结构来表示Java中的树？](https://code.i-harness.com/zh-CN/q/35bf96)
 
 15. [ 如何从ArrayList中删除重复的元素？](https://code.i-harness.com/zh-CN/q/31cd0)
-          > ```java
-          > Set<Entity> s = new LinkedHashSet<Entity>(entities); // List<Entity> entities
-          > entities.clear();
-          > entities.addAll(s);
-          > ```
+    > ```java
+    > Set<Entity> s = new LinkedHashSet<Entity>(entities); // List<Entity> entities
+    > entities.clear();
+    > entities.addAll(s);
+    > ```
 
 16. [**List<**String**>** 合并为一个 **String** ](https://code.i-harness.com/zh-CN/q/1abb24)
 
-          > ```java
-          > // Bill and Bob and Steve
-          > String.join(" and ", Arrays.asList("Bill", "Bob", "Steve"));
-          > ```
+    > ```java
+    > // Bill and Bob and Steve
+    > String.join(" and ", Arrays.asList("Bill", "Bob", "Steve"));
+    > ```
 
 17. [将 ArrayList 中内容合并为字符串](https://code.i-harness.com/zh-CN/q/92479)
 
 18. [逗号分隔字符串存储至ArrayList集合中](https://code.i-harness.com/zh-CN/q/724483)
 
-          > ```java
-          > String commaSeparated = "item1 , item2 , item3";
-          > ArrayList<String> items = new ArrayList<String>(Arrays.asList(commaSeparated.split(",")));
-          > ```
+    > ```java
+    > String commaSeparated = "item1 , item2 , item3";
+    > ArrayList<String> items = new ArrayList<String>(Arrays.asList(commaSeparated.split(",")));
+    > ```
 
 19. [如何检测链表中的循环？](https://code.i-harness.com/zh-CN/q/28a2cb)
 
 20. [统计字符串中某一字符出现的个数](https://code.i-harness.com/zh-CN/q/435e8)
 
-          > ```java
-          > int res = "abd$asda$asad$sas".chars().reduce(0, (a, c) -> a + (c == '$' ? 1 : 0));
-          >    System.out.println(res);
-          > ```
+    > ```java
+    > int res = "abd$asda$asad$sas".chars().reduce(0, (a, c) -> a + (c == '$' ? 1 : 0));
+    >    System.out.println(res);
+    > ```
 
 21. [检测重复String的简单方法](https://code.i-harness.com/zh-CN/q/12d8eb)
 
 22. [Java 8中的map和flatMap方法有什么区别？](https://code.i-harness.com/zh-CN/q/1972c92)
 
-          > [flatmap将多个Stream连接成一个Stream](https://blog.csdn.net/andyzhaojianhui/article/details/79047825)，换言之它可以接收类似于list<list<E>>之类的集合，每个元素都可以迭代。之后对每一个元素进行迭代，每一次迭代进行一次方法
+	> [flatmap将多个Stream连接成一个Stream](https://blog.csdn.net/andyzhaojianhui/article/details/79047825)，换言之它可以接收类似于list<list<E>>之类的集合，每个元素都可以迭代。之后对每一个元素进行迭代，每一次迭代进行一次方法
 
 23. [为什么在尝试从列表中删除元素时会遇到UnsupportedOperationException？](https://code.i-harness.com/zh-CN/q/2d40f3)
 
-          > Arrays.asList()返回的列表是不可变的。
-          > ```java
-          > 使用 List<String> list = new ArrayList(Arrays.asList(split))
-          > ```
+    > Arrays.asList()返回的列表是不可变的。
+    > ```java
+    > 使用 List<String> list = new ArrayList(Arrays.asList(split))
+    > ```
 
 
 18. [如何在Java中填充字符串](https://code.i-harness.com/zh-CN/q/5ed6d)
@@ -166,7 +166,6 @@ excerpt_separator: <!--more-->
 
     > 建议并使用 LinkedHashMap 或其他有序集合（它会按照插入顺序迭代元素）， [此链接可以帮助您找到最适合使用的集合](http://www.javapractices.com/topic/TopicAction.do?Id=65)。如果想找其他保留插入顺序的集合，可以看看 [这个讨论帖](https://code.i-harness.com/zh-CN/q/a6dfe)
 
-23. 
 
 
 
