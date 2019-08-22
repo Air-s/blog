@@ -54,7 +54,7 @@ public async void method() {
 
 再看一个有趣的例子。
 
-```
+```c#
 public async void method() {
     await function1();
     code1 
@@ -65,14 +65,14 @@ public async void method() {
 
 如果是上述代码可以理解为
 
-```
+```c#
 public async void method() {
 	function1.callback += ()=>{
-	    code1 
-    	function2().callback += ()=>{
-    		code2 
-    	}
-    	function2();
+		code1 
+		function2().callback += ()=>{
+			code2 
+		}
+		function2();
 	}
 	function1();
 }
