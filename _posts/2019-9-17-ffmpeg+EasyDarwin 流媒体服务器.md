@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ffmpeg+EasyDarwin 流媒体服务器
+title: FFmpeg+EasyDarwin 流媒体服务器
 tags: [基础]
 excerpt_separator: <!--more-->
 ---
@@ -39,6 +39,21 @@ ffmpeg.exe -f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME" -vcodec li
 
 > 这个时候其实就可以打开 VLC、Potplayer 等播放器输入 `rtsp://SERVER_IP/PATH` 这个地址可以实时观看视频流了，EasyDarwin 实际上是将流转发并起到监控等控制的作用
 
+```c
+// 输入设备从directshow接口获取，并指定视频与音频设备名称
+-f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME"
+//使用x264压缩编码，编码速度指定中等，一定压缩比率压缩（范围是0-51）
+-vcodec libx264 -preset medium -crf 20
+//拷贝原始音频流（如果RTMP推流可采用 -acodec aac）
+-acodec copy
+//指定rtsp传输方式，如果不指定默认为UDP
+-rtsp_transport tcp
+//指定输出格式，也可设置为-f flv等格式
+-f rtsp
+```
+
+> ① 输入设备与接口可参考[《FFmpeg官方文档》](https://ffmpeg.org/ffmpeg-devices.html) ② libx264 参数具体含义可参考 [此博客](https://www.cnblogs.com/poissonnotes/p/6904728.html) 和 [此文章](http://livevideostack.com/portal.php?mod=view&aid=22) ③ 如果想对 rtsp 更细致调整可参考 [此文章](https://weichao.io/2018/07/29/FFmpeg-录制-RTSP-流/)
+
 Step4：解压下载的 EasyDarwin 压缩包，运行 EasyDarwin.exe，浏览器输入 [http://localhost:10008](http://localhost:10008/) 即可进入后台监控，查看推流、拉流列表
 
 ### 参考
@@ -55,4 +70,9 @@ Step4：解压下载的 EasyDarwin 压缩包，运行 EasyDarwin.exe，浏览器
   - [ffmpeg 命令行参数中文详解](http://www.mikewootc.com/wiki/sw_develop/multimedia/ffmpeg_app_param.html)
   - [FFmpeg 命令行](https://wklchris.github.io/FFmpeg.html)
   - [ffmpeg 参数中文详细解释](https://blog.csdn.net/leixiaohua1020/article/details/12751349)
+  - [FFmpeg X264 的 preset 和 tune 参数](https://www.cnblogs.com/poissonnotes/p/6904728.html)
 
+- FFmpeg 实战
+  - [【简书】FFmpeg 推流总结](https://www.jianshu.com/p/37ef34258608)
+  - [【简书】FFmpeg 常用推流命令](https://www.jianshu.com/p/d541b317f71c)
+  - [【xf's Blog】FFmpeg 流媒体使用总结](https://zxf.me/2019/06/20/FFmpeg-流媒体/)
