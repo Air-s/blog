@@ -31,6 +31,12 @@ ffmpeg -list_devices true -f dshow -i dummy
 
 > 如果发现乱码则通过计算机管理-设备管理器查看设备名称
 
+命令行输入以下命令，查看USB摄像头流信息
+
+```c
+ffmpeg -list_options true -f dshow -i video="YOUR_CAMERA_NAME"
+```
+
 Step3：输入以下命令
 
 ```c
@@ -40,15 +46,19 @@ ffmpeg.exe -f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME" -vcodec li
 > 这个时候其实就可以打开 VLC、Potplayer 等播放器输入 `rtsp://SERVER_IP/PATH` 这个地址可以实时观看视频流了，EasyDarwin 实际上是将流转发并起到监控等控制的作用
 
 ```c
+//多线程计算
+-threads 2
 // 输入设备从directshow接口获取，并指定视频与音频设备名称
 -f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME"
-//使用x264压缩编码，编码速度指定中等，一定压缩比率压缩（范围是0-51）
--vcodec libx264 -preset medium -crf 20
-//拷贝原始音频流（如果RTMP推流可采用 -acodec aac）
+//使用x264压缩编码，编码速度指定中等，一定压缩比率压缩（范围是0-51），设置分辨率为720x576
+-vcodec libx264 -preset medium -crf 26 -s 720x576
+//设置其他参数（这里设置关键帧间隔、最小关键帧间隔，不过不建议设置这两个参数）
+-x264-params keyint=123:min-keyint=20
+//拷贝原始音频流（也可采用 -acodec aac）
 -acodec copy
 //指定rtsp传输方式，如果不指定默认为UDP
 -rtsp_transport tcp
-//指定输出格式，也可设置为-f flv等格式
+//指定输出方式，也可设置为-f flv等格式
 -f rtsp
 ```
 
@@ -75,4 +85,16 @@ Step4：解压下载的 EasyDarwin 压缩包，运行 EasyDarwin.exe，浏览器
 - FFmpeg 实战
   - [【简书】FFmpeg 推流总结](https://www.jianshu.com/p/37ef34258608)
   - [【简书】FFmpeg 常用推流命令](https://www.jianshu.com/p/d541b317f71c)
-  - [【xf's Blog】FFmpeg 流媒体使用总结](https://zxf.me/2019/06/20/FFmpeg-流媒体/)
+  - [**【FFmpeg】 ffmpeg 常用命令**](https://www.cnblogs.com/frost-yen/p/5848781.html)
+- [【xf's Blog】FFmpeg 流媒体使用总结](https://zxf.me/2019/06/20/FFmpeg-流媒体/)
+  
+- [**crf数值对文件大小的影响——用 ffmpeg 命令行转压视频**](https://segmentfault.com/a/1190000002502526)
+
+- [**crf数值对文件大小的影响——FFmpeg 视频转码技巧之 - crf 参数（H.264 篇）**](https://blog.csdn.net/happydeer/article/details/52610060)
+
+- [**preset值对延时与质量的影响——ffmpeg 的转码延时测试与设置优化**](https://blog.csdn.net/fireroll/article/details/51902018)
+
+- [**音视频文件码率与大小计算**](https://www.cnblogs.com/kakafra/p/3326011.html)
+
+  > 800kbps 来编码表示经过编码后的数据每秒钟需要用 800K **比特**来表示，比特（bit/b），1KB=8Kb
+
