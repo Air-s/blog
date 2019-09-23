@@ -25,7 +25,7 @@ Step1：解压下载的 FFmpeg 压缩包，进入其 bin 文件夹下，在此�
 
 Step2：命令行输入以下命令，查找USB摄像头设备名称
 
-```c
+```bash
 ffmpeg -list_devices true -f dshow -i dummy
 ```
 
@@ -33,38 +33,58 @@ ffmpeg -list_devices true -f dshow -i dummy
 
 命令行输入以下命令，查看USB摄像头流信息
 
-```c
+```bash
 ffmpeg -list_options true -f dshow -i video="YOUR_CAMERA_NAME"
 ```
 
-Step3：输入以下命令
+Step3：查找554端口是否被占用
 
-```c
+```bash
+netstat -aon|findstr "554"
+```
+
+> 或者停止 Windows Media Player Network Sharing Service 服务
+
+Step4：解压下载的 EasyDarwin 压缩包，运行 EasyDarwin.exe，浏览器输入 [http://localhost:10008](http://localhost:10008/) 即可进入后台监控，查看推流、拉流列表
+
+> 如果不先打开服务直接运行 FFmpeg 可能会出现 real-time buffer [video input] too full or near too full 错误，关于这个问题讨论可以看 [这篇文章](https://forums.vmix.com/posts/t5692-Streaming-error-real-time-buffer--vMix-Video---video-input--too-full-or-near-too-full) 和 
+
+Step5：输入以下命令
+
+```bash
 ffmpeg.exe -f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME" -vcodec libx264 -acodec copy -rtsp_transport tcp -f rtsp rtsp://SERVER_IP/PATH
 ```
 
-> 这个时候其实就可以打开 VLC、Potplayer 等播放器输入 `rtsp://SERVER_IP/PATH` 这个地址可以实时观看视频流了，EasyDarwin 实际上是将流转发并起到监控等控制的作用
+> ① 如果想停止流传输进入EasyDarwin后台界面停止它尽可能不要用Ctrl+Q退出 ② 这个时候其实就可以打开 VLC、Potplayer 等播放器输入 `rtsp://SERVER_IP/PATH` 这个地址可以实时观看视频流了，EasyDarwin 实际上是将流转发并起到监控等控制的作用
 
-```c
-//多线程计算
+```bash
+# 多线程计算
 -threads 2
-// 输入设备从directshow接口获取，并指定视频与音频设备名称
+# 输入设备从directshow接口获取，并指定视频与音频设备名称
 -f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME"
-//使用x264压缩编码，编码速度指定中等，一定压缩比率压缩（范围是0-51），设置分辨率为720x576
--vcodec libx264 -preset medium -crf 26 -s 720x576
-//设置其他参数（这里设置关键帧间隔、最小关键帧间隔，不过不建议设置这两个参数）
+# 使用x264压缩编码，编码速度指定中等，一定压缩比率压缩（范围是0-51），设置分辨率为720x576
+# X264提供三种码率控制的方式：bitrate, qp, crf。这三种方式是互斥的，使用时设置其中之一即可。
+# tune参数非必要不需设置
+-vcodec libx264 -preset medium -tune zerolatency -crf 26 -s 720x576
+# 设置其他参数（这里设置关键帧间隔、最小关键帧间隔，不过不建议设置这两个参数）
 -x264-params keyint=123:min-keyint=20
-//拷贝原始音频流（也可采用 -acodec aac）
+# 拷贝原始音频流（也可采用 -acodec aac）
 -acodec copy
-//指定rtsp传输方式，如果不指定默认为UDP
+# 指定rtsp传输方式，如果不指定默认为UDP
 -rtsp_transport tcp
-//指定输出方式，也可设置为-f flv等格式
+# 指定输出方式，也可设置为-f flv等格式
 -f rtsp
 ```
 
 > ① 输入设备与接口可参考[《FFmpeg官方文档》](https://ffmpeg.org/ffmpeg-devices.html) ② libx264 参数具体含义可参考 [此博客](https://www.cnblogs.com/poissonnotes/p/6904728.html) 和 [此文章](http://livevideostack.com/portal.php?mod=view&aid=22) ③ 如果想对 rtsp 更细致调整可参考 [此文章](https://weichao.io/2018/07/29/FFmpeg-录制-RTSP-流/)
 
-Step4：解压下载的 EasyDarwin 压缩包，运行 EasyDarwin.exe，浏览器输入 [http://localhost:10008](http://localhost:10008/) 即可进入后台监控，查看推流、拉流列表
+Step6：多路输出（以下命令为 rtsp 推流和录制流输出至本地 mp4 文件）
+
+```bash
+ffmpeg.exe -threads 4 -thread_queue_size 1024 -rtbufsize 124M -flags low_delay -max_delay 0 -f dshow -i video="USB2.0 PC CAMERA":audio="麦克风 (USB Audio Device)" -vcodec libx265 -crf 26 -tune fastdecode -x264-params keyint=50 -acodec aac -rtsp_transport tcp -f rtsp rtsp://192.168.0.100/test -vcodec libx265 -crf 26 -acodec aac -f mp4 C:\Users\Dell\Desktop\text.mp4
+```
+
+> ① 多路输出方式格式为 -vcodec xx -acodecxx -f xx PATH1 -vocodec xx -acodec xx -f xx PATH2，当然也可以使用 -f tee 或 -f matroska 等方式多路输出 ② 关于延迟，使用 udp 传输比 tcp 启动快且延迟小，缺点是可能会出现花屏，延迟也可能与播放器有关，相关讨论 [Stack Overflow: how to minimize the delay](https://stackoverflow.com/questions/16658873/how-to-minimize-the-delay-in-a-live-streaming-with-ffmpeg) 和 [FFmpeg Wiki](https://trac.ffmpeg.org/wiki/StreamingGuide#Latency)
 
 ### 参考
 
@@ -85,8 +105,8 @@ Step4：解压下载的 EasyDarwin 压缩包，运行 EasyDarwin.exe，浏览器
 - FFmpeg 实战
   - [【简书】FFmpeg 推流总结](https://www.jianshu.com/p/37ef34258608)
   - [【简书】FFmpeg 常用推流命令](https://www.jianshu.com/p/d541b317f71c)
-  - [**【FFmpeg】 ffmpeg 常用命令**](https://www.cnblogs.com/frost-yen/p/5848781.html)
-- [【xf's Blog】FFmpeg 流媒体使用总结](https://zxf.me/2019/06/20/FFmpeg-流媒体/)
+  - [【FFmpeg】 ffmpeg 常用命令](https://www.cnblogs.com/frost-yen/p/5848781.html)
+  - [【xf's Blog】FFmpeg 流媒体使用总结](https://zxf.me/2019/06/20/FFmpeg-流媒体/)
   
 - [**crf数值对文件大小的影响——用 ffmpeg 命令行转压视频**](https://segmentfault.com/a/1190000002502526)
 
