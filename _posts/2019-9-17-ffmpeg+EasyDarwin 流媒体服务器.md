@@ -47,7 +47,7 @@ netstat -aon|findstr "554"
 
 Step4：解压下载的 EasyDarwin 压缩包，运行 EasyDarwin.exe，浏览器输入 [http://localhost:10008](http://localhost:10008/) 即可进入后台监控，查看推流、拉流列表
 
-> 如果不先打开服务直接运行 FFmpeg 可能会出现 real-time buffer [video input] too full or near too full 错误，关于这个问题讨论可以看 [这篇文章](https://forums.vmix.com/posts/t5692-Streaming-error-real-time-buffer--vMix-Video---video-input--too-full-or-near-too-full) 和 
+> 如果不先打开服务直接运行 FFmpeg 可能会出现 real-time buffer [video input] too full or near too full 错误，关于这个问题讨论可以看 [这篇文章](https://forums.vmix.com/posts/t5692-Streaming-error-real-time-buffer--vMix-Video---video-input--too-full-or-near-too-full)，除去端口被占用，还有一种情况就是网络断开，即 FFmepg 中 rtsp 指定 SERVER_IP 无法到达
 
 Step5：输入以下命令
 
@@ -55,7 +55,7 @@ Step5：输入以下命令
 ffmpeg.exe -f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME" -vcodec libx264 -acodec copy -rtsp_transport tcp -f rtsp rtsp://SERVER_IP/PATH
 ```
 
-> ① 如果想停止流传输进入EasyDarwin后台界面停止它尽可能不要用Ctrl+Q退出 ② 这个时候其实就可以打开 VLC、Potplayer 等播放器输入 `rtsp://SERVER_IP/PATH` 这个地址可以实时观看视频流了，EasyDarwin 实际上是将流转发并起到监控等控制的作用
+> ① 如果想停止流传输进入EasyDarwin后台界面停止它尽可能不要用Ctrl+Q退出 ② 这个时候就可以打开 VLC、Potplayer 等播放器输入 `rtsp://SERVER_IP/PATH` 这个地址可以实时观看视频流了，EasyDarwin 实际上是将流转发并起到监控等控制的作用
 
 ```bash
 # 多线程计算
@@ -81,7 +81,7 @@ ffmpeg.exe -f dshow -i video="YOUR_CAMERA_NAME":audio="YOUR_MIC_NAME" -vcodec li
 Step6：多路输出（以下命令为 rtsp 推流和录制流输出至本地 mp4 文件）
 
 ```bash
-ffmpeg.exe -threads 4 -thread_queue_size 1024 -rtbufsize 124M -flags low_delay -max_delay 0 -f dshow -i video="USB2.0 PC CAMERA":audio="麦克风 (USB Audio Device)" -vcodec libx265 -crf 26 -tune fastdecode -x264-params keyint=50 -acodec aac -rtsp_transport tcp -f rtsp rtsp://192.168.0.100/test -vcodec libx265 -crf 26 -acodec aac -f mp4 C:\Users\Dell\Desktop\text.mp4
+ffmpeg.exe -threads 4 -thread_queue_size 1024 -rtbufsize 124M -flags low_delay -max_delay 0 -f dshow -i video="USB2.0 PC CAMERA":audio="麦克风 (USB Audio Device)" -vcodec libx265 -crf 26 -tune fastdecode -x264-params keyint=50 -acodec aac -rtsp_transport tcp -f rtsp rtsp://192.168.0.100/test -vcodec libx265 -crf 26 -acodec aac -f mp4 “C:\Users\Dell\Desktop\text.mp4”
 ```
 
 > ① 多路输出方式格式为 -vcodec xx -acodecxx -f xx PATH1 -vocodec xx -acodec xx -f xx PATH2，当然也可以使用 -f tee 或 -f matroska 等方式多路输出 ② 关于延迟，使用 udp 传输比 tcp 启动快且延迟小，缺点是可能会出现花屏，延迟也可能与播放器有关，相关讨论 [Stack Overflow: how to minimize the delay](https://stackoverflow.com/questions/16658873/how-to-minimize-the-delay-in-a-live-streaming-with-ffmpeg) 和 [FFmpeg Wiki](https://trac.ffmpeg.org/wiki/StreamingGuide#Latency)
